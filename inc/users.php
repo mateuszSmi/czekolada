@@ -8,43 +8,50 @@ class User {
 	var $CookieName = 'phpapp';
 	var $remTime = 7200;
 	var $kom = array();
-	function __construct(){
+
+	function __construct() {
 		if (!isset($_SESSION)) session_start();
-		if (isset($_COOKIE[$this->CookieName]) && !$this->id){
+		if (isset($_COOKIE[$this->CookieName]) && !$this->id) {
 			$c = unserialize(base64_decode($_COOKIE[$this->CookieName]));
-			$this->login($c['login'],$['haslo'],false.true);
-			$this->kom[]="Witaj {$this->login}! Zostałeś automatycznie zalogowany!";
+			$this->login($c['login'], $c['haslo'], false, true);
+			$this->kom[] = "Witaj {$this->login}! Zostałeś automatycznie zalogowany!";
+		}
+
+		if (!$this->id && isset($_POST['login2'])){
+    foreach ($_POST as $k => $v) {
+      ${$k} = clrtxt($v);
+    }
+    $this->login($login2, $haslo2, true, true);
 		}
 
 	}
 
-function login($login, $haslo,$rem=false,$load=true){
-	if ($load && $this->is_user($login, $haslo)){
-		if($rem){
-			$c= base64_encode(serialize(array('login'=>$login, 'haslo'=>$haslo)));
-			$this->kom[]=$c;
-			$a = setcookie($this->CookieName,$c,time()+$this->remTime, '/', 'localhost',false,true)
-			if ($a) $this->kom[]='Zapisano ciasteczko.';
-			$this->kom[] = "Witaj $login! Zostałeś zalogowany";
-			return true;
+	function login($login, $haslo, $rem=false, $load=true ) {
+		if ($load && $this->is_user($login, $haslo)) {
+			if ($rem) {
+				$c = base64_encode(serialize(array('login'=>$login, 'haslo'=>$haslo)));
+				$this->kom[] = $c;
+				$a = setcookie($this->CookieName, $c, time()+$this->remTime, '/', 'localhost', false, true);
+				if ($a) $this->kom[] = 'Zapisano ciasteczko.';
+				$this->kom[] = "Witaj $login! Zostałeś zalogowany.";
+				return true;
+			}
+		} else {
+			$this->kom[] = 'Błędny login lub hasło!';
+			return false;
 		}
 	}
-	else {
-		$this->kom[]='Błędny login lub hasło!';
-		return fasle ;
-	}
-}
 
 	function is_user($login=NULL, $haslo=NULL) {
 		if (!empty($login)) {
-				$q="SELECT * FROM users WHERE login ='$login' AND haslo ='".sha1($haslo)."' LIMIT 1";
+				$q="SELECT * FROM users WHERE login='$login' AND haslo='".sha1($haslo)."' LIMIT 1";
 		} else return false;
 
 		Baza::db_query($q);
 		if (!empty(Baza::$ret[0])) {
 			$this->dane=array_merge($this->dane,Baza::$ret[0]);
 			$sid=sha1($this->id.$this->login.session_id());
-			$_SESSION[$this->uVal] = $sid; // zapis identyfikatora sesji
+			$_SESSION['sid'] = $sid; // zapis identyfikatora sesji
 			return true;
 		}
 		return false;
@@ -63,13 +70,13 @@ function login($login, $haslo,$rem=false,$load=true){
 
 	function is_login($login) {
 		$qstr='SELECT id FROM users WHERE login=\''.$login.'\' LIMIT 1';
-    if (db_query($qstr)) return true;
+    if (Baza::db_query($qstr)) return true;
     return false;
 	}
 
 	function is_email($email) {
 		$qstr='SELECT id FROM users WHERE email=\''.$email.'\' LIMIT 1';
-    if (db_query($qstr)) return true;
+    if (Baza::db_query($qstr)) return true;
     return false;
 	}
 
@@ -78,10 +85,10 @@ function login($login, $haslo,$rem=false,$load=true){
 		$this->llog=time();
 		if (!$this->id) {
 			$qstr='INSERT INTO users VALUES (NULL,\''.$this->login.'\',\''.$this->haslo.'\',\''.$this->email.'\',time())';
-			$ret=db_exec($qstr);
-			$id = db_lastInsertID();
+			Baza::db_exec($qstr);
+			//$id = db_lastInsertID();
 		}
-		if ($ret) return true;
+		if (Baza::$ret) return true;
 		return false;
 	}
 
