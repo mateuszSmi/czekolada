@@ -35,9 +35,9 @@
             get_koms(Baza::$kom);
             get_koms($user->kom);
             get_koms($kom);
-            if (isset($_COOKIE[$user->CookieName])){
+            if (isset($_COOKIE[$user->CookieName])) {
                 echo "<p>Ciasteczko: ".$_COOKIE[$user->CookieName]."</p>";
-            } else{
+            } else {
                 echo "<p>Brak ciasteczka.</p>";
             }
 		?>
