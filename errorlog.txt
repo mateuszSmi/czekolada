@@ -2,3 +2,26 @@
 [08-Jan-2020 09:17:17 Europe/Warsaw] PHP Warning:  session_start(): Failed to read session data: files (path: sesje) in /home/kl2ag1/public_html/czekolada/inc/users.php on line 13
 [08-Jan-2020 09:17:22 Europe/Warsaw] PHP Warning:  session_start(): open(sesje/sess_aivqpfk95kig93ns8h93i8ii4i, O_RDWR) failed: Nie ma takiego pliku ani katalogu (2) in /home/kl2ag1/public_html/czekolada/inc/users.php on line 13
 [08-Jan-2020 09:17:22 Europe/Warsaw] PHP Warning:  session_start(): Failed to read session data: files (path: sesje) in /home/kl2ag1/public_html/czekolada/inc/users.php on line 13
+[10-Jan-2020 10:00:50 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 8
+[10-Jan-2020 10:00:50 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 45
+[10-Jan-2020 10:00:50 Europe/Warsaw] PHP Notice:  Trying to get property 'kom' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 36
+[10-Jan-2020 10:00:50 Europe/Warsaw] PHP Warning:  Invalid argument supplied for foreach() in /home/kl2ag1/public_html/czekolada/inc/functions.php on line 63
+[10-Jan-2020 10:00:50 Europe/Warsaw] PHP Notice:  Trying to get property 'CookieName' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 38
+[10-Jan-2020 10:03:33 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '');' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ')' in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 34
+[10-Jan-2020 10:04:04 Europe/Warsaw] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 34
+[10-Jan-2020 10:04:55 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 8
+[10-Jan-2020 10:04:55 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 47
+[10-Jan-2020 10:04:55 Europe/Warsaw] PHP Notice:  Trying to get property 'kom' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 36
+[10-Jan-2020 10:04:55 Europe/Warsaw] PHP Warning:  Invalid argument supplied for foreach() in /home/kl2ag1/public_html/czekolada/inc/functions.php on line 63
+[10-Jan-2020 10:04:55 Europe/Warsaw] PHP Notice:  Trying to get property 'CookieName' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 38
+[10-Jan-2020 10:08:44 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 41
+[10-Jan-2020 10:08:56 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 8
+[10-Jan-2020 10:08:56 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 49
+[10-Jan-2020 10:08:56 Europe/Warsaw] PHP Notice:  Trying to get property 'kom' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 36
+[10-Jan-2020 10:08:56 Europe/Warsaw] PHP Warning:  Invalid argument supplied for foreach() in /home/kl2ag1/public_html/czekolada/inc/functions.php on line 63
+[10-Jan-2020 10:08:56 Europe/Warsaw] PHP Notice:  Trying to get property 'CookieName' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 38
+[10-Jan-2020 10:10:24 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 8
+[10-Jan-2020 10:10:24 Europe/Warsaw] PHP Notice:  Trying to get property 'id' of non-object in /home/kl2ag1/public_html/czekolada/wiadomosci.html on line 49
+[10-Jan-2020 10:10:24 Europe/Warsaw] PHP Notice:  Trying to get property 'kom' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 36
+[10-Jan-2020 10:10:24 Europe/Warsaw] PHP Warning:  Invalid argument supplied for foreach() in /home/kl2ag1/public_html/czekolada/inc/functions.php on line 63
+[10-Jan-2020 10:10:24 Europe/Warsaw] PHP Notice:  Trying to get property 'CookieName' of non-object in /home/kl2ag1/public_html/czekolada/inc/template.php on line 38
